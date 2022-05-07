@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div class="row mb-5">
+    <div class="col-md-8 col-12 text-center text-md-left">
+      <!-- TODO: -->
+      <h2 class="px-3 mb-0 font">{{title}}</h2>
+    </div>
+    <div class="col-md-4 col-12 text-center">
+      <div class="">
+        <h6 class="text-lg-right p-2 px-3 mb-0">
+          <i class="fas fa-user-tag ml-1"></i>
+          <!-- TODO: -->
+          <span>Admin</span>
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-2 hover-shadow">
+    <div class="card-body">
+      <div class="row">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <!-- TODO: -->
+              <h3 class="mb-4 font1 ">{{subTitle}}</h3>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label class="w-100">
+                  Solde
+                  <input type="text" class="form-control mt-2" [(ngModel)]="solde">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label class="w-100">Client
+                  <select *ngIf="rib=== undefined" class="form-control" name="client" id="client" [(ngModel)]="client1">
+                    <option *ngFor="let client of clientList" [ngValue]="client1">{{client.id}} - {{client.nom}} {{client.prenom}}</option>
+                  </select>
+                  <label *ngIf="rib !==undefined" for="client1" >Client</label>
+                  <select *ngIf="rib!== undefined" class="form-control" name="client1" id="client1" [(ngModel)]="client1">
+                    <option [ngValue]="client1">{{client1.id}} - {{client1.nom}} {{client1.prenom}}</option>
+                  </select>
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+
+
+
+            <div class="col-6 col-xl-3 mt-3">
+              <button type="submit" class="btn btn-outline-success btn-block" (click)="OnSubmit()">{{'SPECIFIC.success' | translate | titlecase}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <a class="btn btn-outline-info btn-sm rounded px-3 py-0" title="رجوع إلى الصفحة السابقة"
+         href="javascript:history.back();">
+        <i class="fa fa-angle-left mt-1"></i>
+      </a>
+    </div>
+  </div>
+</div>

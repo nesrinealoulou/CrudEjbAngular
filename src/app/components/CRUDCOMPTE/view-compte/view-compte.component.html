@@ -32,27 +32,6 @@
                 <hr>
               </div>
             </div>
-
-           <!-- <div class="row">
-              <div class="col-12 mb-4">
-                <div class="alert alert-danger rounded">
-                  <i class="fa pr-2 fa-info-circle"></i>
-                  &lt;!&ndash; TODO: &ndash;&gt;
-                  {{'VIEW.error_msg' | translate}}
-                </div>
-              </div>
-            </div>
--->
-            <!--<div class="row">
-              <div class="col-12 mb-4">
-                <div class="alert alert-success rounded">
-                  <i class="fa pr-2 fa-check-circle"></i>
-                  &lt;!&ndash; TODO: &ndash;&gt;
-                  {{'VIEW.success_msg' | translate}}
-                </div>
-              </div>
-            </div>
--->
             <div class="row">
               <div class="col-12">
                 <label class="w-100 mb-4">
@@ -75,24 +54,22 @@
                     <thead>
                     <tr>
                       <th>id</th>
-                      <th>nom</th>
-                      <th>prenom</th>
-                      <th>addresse</th>
+                      <th>solde</th>
+                      <th>client</th>
                       <th>{{'VIEW.table.actions' | translate | titlecase}}</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let client of clientList | filter:term">
-                      <td>{{client.id}}</td>
-                      <td>{{client.nom}}</td>
-                      <td>{{client.prenom}}</td>
-                      <td>{{client.addresse}}</td>
+                    <tr *ngFor="let compte of comptesList | filter:term">
+                      <td>{{compte.id}}</td>
+                      <td>{{compte.solde}}</td>
+                      <td>{{compte.client}}</td>
                       <td>
                         <a href="specific_item.html" class="btn btn-light px-1 py-0 text-body mr-2"
-                           title="More Details" routerLink="/update-client/{{client.id}}">
+                           title="More Details" routerLink="/update-compte/{{compte.rib}}">
                           <i class="fa mt-1 fa-edit"></i>
                         </a>
-                        <button class="btn btn-light px-1 py-0 text-body" title="Delete" (click)="deleteClient(client.id)">
+                        <button class="btn btn-light px-1 py-0 text-body" title="Delete" (click)="deleteCompte(compte.rib)">
                           <i class="fa mt-1 fa-trash"></i>
                         </button>
                       </td>
@@ -116,3 +93,4 @@
     </div>
   </div>
 </div>
+
